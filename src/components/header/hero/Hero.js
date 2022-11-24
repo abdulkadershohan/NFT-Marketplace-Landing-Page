@@ -427,7 +427,7 @@ export default function Hero() {
         >
             <Grid container spacing={2}
                 sx={{
-                    // alignItems: 'center',
+                    //alignItems: 'center',
                     py: 8
                 }}
             >
@@ -558,7 +558,9 @@ export default function Hero() {
                 </Grid >
                 {/* right section */}
 
-                <Grid Grid item xs={12} md={6} >
+                <Grid Grid item xs={12} md={6}
+
+                >
                     <Box
                         sx={{
                             // backgroundColor: 'red',
