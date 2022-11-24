@@ -19,6 +19,7 @@ const Card1 = () => {
                     // right: { xs: "5%", sm: '50%', lg: '5%' },
                     width: 'fit-content',
                     p: 2,
+                    px: 4,
                     background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
                     backdropFilter: 'blur(13.3817px)',
@@ -76,6 +77,7 @@ const Card2 = () => {
                     width: 'fit-content',
                     height: 'fit-content',
                     p: 2,
+                    px: 4,
                     background: "linear-gradient(155.14deg, rgba(252, 255, 117, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)",
                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
                     backdropFilter: 'blur(24.6223px)',
@@ -159,6 +161,7 @@ const Card3 = () => {
                     width: 'fit-content',
                     height: 'fit-content',
                     p: 2,
+                    px: 4,
                     background: "linear-gradient(155.14deg, rgba(252, 255, 117, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)",
                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
                     backdropFilter: 'blur(24.6223px)',
@@ -230,6 +233,189 @@ const Card3 = () => {
         </Box >
     )
 }
+// Auction section
+const Card4 = () => {
+    return (
+        <Box
+            sx={[
+                {
+                    position: 'absolute',
+                    bottom: '-5%',
+                    left: '-20%',
+                    // top: { xs: "5%", sm: '20%', lg: '5%' },
+                    // right: { xs: "5%", sm: '50%', lg: '5%' },
+                    width: 'fit-content',
+                    p: 2,
+                    px: 6,
+                    background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
+                    filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
+                    backdropFilter: 'blur(13.3817px)',
+                    borderRadius: '20px',
+                    transform: ' matrix(0.98, 0, -0.18, 1, 0, 0)',
+                    border: '1.6px solid rgba(255, 255, 255, 0.2)',
+                }
+            ]}
+        >
+            <Stack
+                alignItems="center"
+                justifyContent="center"
+                sx={{
+                    transform: 'matrix(0.98, 0, -0.18, 1, 0, 0)'
+                }}
+
+            >
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="21px"
+                    fontWeight="600"
+                    color={"#fff"}
+                >
+                    Auction
+                </CTypography>
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="15px"
+                    fontWeight="300"
+                    color={"#fff"}
+
+                >
+                    End In
+                </CTypography>
+            </Stack>
+
+        </Box >
+    )
+}
+// hh mm ss section
+const Card5 = () => {
+    return (
+        <Box
+            sx={[
+                {
+                    position: 'absolute',
+                    bottom: {
+                        sm: '-10%',
+                        xs: '-30%',
+
+                    },
+                    right: '5%',
+                    // top: { xs: "5%", sm: '20%', lg: '5%' },
+                    // right: { xs: "5%", sm: '50%', lg: '5%' },
+                    width: 'fit-content',
+                    p: 2,
+                    px: { xs: 4, lg: 10 },
+                    background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
+                    filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
+                    backdropFilter: 'blur(13.3817px)',
+                    borderRadius: '20px',
+                    transform: ' matrix(0.98, 0, -0.18, 1, 0, 0)',
+                    border: '1.6px solid rgba(255, 255, 255, 0.2)',
+                }
+            ]}
+        >
+            <Stack
+                justifyContent="space-between"
+                direction="row"
+                sx={{
+                    transform: 'matrix(0.98, 0, -0.18, 1, 0, 0)'
+                }}
+                spacing={2}
+
+            >
+                <Box>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="34px"
+                        fontWeight="600"
+                        color={"#fff"}
+                    >
+                        17
+                    </CTypography>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="15px"
+                        fontWeight="300"
+                        color={"#fff"}
+                    >
+                        Hours
+                    </CTypography>
+                </Box>
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="34px"
+                    fontWeight="600"
+                    color={"#fff"}
+                >
+                    :
+                </CTypography>
+                <Box>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="34px"
+                        fontWeight="600"
+                        color={"#fff"}
+                    >
+                        56
+                    </CTypography>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="15px"
+                        fontWeight="300"
+                        color={"#fff"}
+                    >
+                        Minutes
+                    </CTypography>
+                </Box>
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="34px"
+                    fontWeight="600"
+                    color={"#fff"}
+                >
+                    :
+                </CTypography>
+                <Box>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="34px"
+                        fontWeight="600"
+                        color={"#fff"}
+                    >
+                        03
+                    </CTypography>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="15px"
+                        fontWeight="300"
+                        color={"#fff"}
+                    >
+                        Seconds
+                    </CTypography>
+                </Box>
+
+
+                {/* <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="21px"
+                    fontWeight="600"
+                    color={"#fff"}
+                >
+                    Auction
+                </CTypography>
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="16px"
+                    fontWeight="500"
+                    color={"#000"}
+
+                >
+                    End In
+                </CTypography> */}
+            </Stack>
+
+        </Box >
+    )
+}
 export default function Hero() {
     return (
         <Stack
@@ -283,23 +469,41 @@ export default function Hero() {
                             ]}
                         />
                         <Box
-                            sx={[
-                                {
-                                    position: 'absolute',
-                                    top: "25%",
-                                    left: "5%",
-                                    display: 'flex',
-                                    width: { xs: 350, sm: 520, md: 400, lg: 520 },
-                                    height: { xs: 520, sm: 600, lg: 600 },
-                                    background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
-                                    filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
-                                    backdropFilter: 'blur(13.3817px)',
-                                    borderRadius: '21px',
-                                    transform: 'matrix(0.98, 0, -0.19, 1, 0, 0)',
-                                    border: '1.6px solid rgba(255, 255, 255, 0.2)',
-                                }
-                            ]}
-                        />
+                            sx={{
+                                position: 'absolute',
+                                top: "25%",
+                                left: "5%",
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    position: 'relative',
+                                }}
+                            >
+                                <Box
+                                    sx={[
+                                        {
+                                            // position: 'absolute',
+                                            // top: "25%",
+                                            // left: "5%",
+                                            display: 'flex',
+                                            width: { xs: 350, sm: 520, md: 400, lg: 520 },
+                                            height: { xs: 520, sm: 600, lg: 600 },
+                                            background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
+                                            filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
+                                            backdropFilter: 'blur(13.3817px)',
+                                            borderRadius: '21px',
+                                            transform: 'matrix(0.98, 0, -0.19, 1, 0, 0)',
+                                            border: '1.6px solid rgba(255, 255, 255, 0.2)',
+                                        }
+                                    ]}
+                                />
+                                <Card4 />
+                                <Card5 />
+                            </Box>
+
+                        </Box>
+
                         <Box
                             sx={{
                                 position: 'absolute',
