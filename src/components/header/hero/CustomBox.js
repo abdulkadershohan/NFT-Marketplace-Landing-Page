@@ -13,7 +13,7 @@ const CustomBox = ({ ...rest }) => {
                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
                     backdropFilter: 'blur(13.3817px)',
                     borderRadius: '21px',
-                    transform: 'matrix(0.98, 0, -0.19, 1, 0, 0)',
+                    transform: ' matrix(0.98, 0, -0.18, 1, 0, 0)',
                     border: '1.6px solid rgba(255, 255, 255, 0.2)',
                     ...rest
                 }

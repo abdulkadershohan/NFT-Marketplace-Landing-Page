@@ -8,11 +8,12 @@ export default function Navbar() {
     return (
         <Box
             sx={{
-                display: 'flex',
+                display: { xs: 'none', sm: 'flex' },
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 py: 2,
                 px: 20,
+
             }}
         >
             <Box
