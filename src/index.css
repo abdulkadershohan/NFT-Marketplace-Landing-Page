@@ -3,7 +3,12 @@ body{
     margin:0px;
     padding: 0px;
     background-color: #ffffff;
-    /* font-family:'ClashDisplay'; */
+    background-image: url("../src/assets/images/BACKGROUND.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center;
+    position: absolute; */
+
 }
 *{
     box-sizing: border-box;
