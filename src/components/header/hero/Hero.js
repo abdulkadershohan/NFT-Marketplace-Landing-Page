@@ -1,12 +1,145 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import foxImg from "../../../assets/images/fox.png";
 import HeroImg from "../../../assets/images/heroImg3.png";
+import VerifiedIcon from "../../../assets/svg/VerifiedIcon";
 import CTypography from "../../../utility/CTypography";
-const Image = () => {
+
+const Card1 = () => {
     return (
-        <Box>
-        </Box>
+        <Box
+            sx={[
+                {
+                    position: 'absolute',
+                    top: { xs: "5%", sm: '20%', lg: '5%' },
+                    right: { xs: "5%", sm: '50%', lg: '5%' },
+                    width: 'fit-content',
+                    p: 2,
+                    background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
+                    filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
+                    backdropFilter: 'blur(13.3817px)',
+                    borderRadius: '21px',
+                    transform: ' matrix(0.98, 0, -0.18, 1, 0, 0)',
+                    border: '1.6px solid rgba(255, 255, 255, 0.2)',
+                }
+            ]}
+        >
+            <Stack
+                alignItems="center"
+                justifyContent="center"
+                sx={{
+                    transform: 'matrix(0.98, 0, -0.18, 1, 0, 0)'
+                }}
+
+            >
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="25px"
+                    fontWeight="700"
+                    color={"#fff"}
+                >
+                    BID NOW!
+                </CTypography>
+                <CTypography
+                    fontFamily="ClashDisplay"
+                    fontSize="14px"
+                    fontWeight="500"
+                    color={"#000"}
+
+                >
+                    Latest Collection
+                </CTypography>
+            </Stack>
+
+        </Box >
+    )
+}
+const Card2 = () => {
+    return (
+        <Box
+            sx={[
+                {
+                    // position: 'absolute',
+                    // right: 0,
+                    // bottom: {
+                    //     lg: '-50%',
+
+                    // },
+                    //   top: { xs: "5%", sm: '20%', lg: '5%' },
+                    //    right: { xs: "5%", sm: '50%', lg: '5%' },
+                    width: 'fit-content',
+                    height: 'fit-content',
+                    p: 2,
+                    background: "linear-gradient(155.14deg, rgba(252, 255, 117, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)",
+                    filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
+                    backdropFilter: 'blur(24.6223px)',
+                    borderRadius: '21.4107px',
+                    transform: ' matrix(0.98, -0.01, -0.18, 1, 0, 0)',
+                    border: '1.6px solid rgba(255, 255, 255, 0.2)',
+                }
+            ]}
+        >
+            <Stack
+                direction="row"
+                alignItems="center"
+                spacing={2}
+
+            >
+                <Box
+                    sx={{
+                        position: 'relative',
+                    }}
+                >
+                    <Box
+                        component={'img'}
+                        src={foxImg}
+                        alt="foxImg"
+                        sx={{
+                            height: { xs: 50, sm: 60, lg: 60 },
+                            width: { xs: 50, sm: 60, lg: 60 },
+                            borderRadius: '16px',
+                        }}
+                    />
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            right: -5,
+                            bottom: 0,
+                        }}
+                    >
+                        <VerifiedIcon />
+                    </Box>
+                </Box>
+
+                <Stack
+                    // alignItems="center"
+                    ///  justifyContent="center"
+                    sx={{
+                        transform: 'matrix(0.98, -0.01, -0.18, 1, 0, 0)'
+                    }}
+                >
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="30px"
+                        fontWeight="600"
+                        color={"#fff"}
+                    >HAPE #6959
+                    </CTypography>
+                    <CTypography
+                        fontFamily="ClashDisplay"
+                        fontSize="14px"
+                        fontWeight="500"
+                        color={"#000"}
+
+                    >
+                        HAPES PRIME
+                    </CTypography>
+
+                </Stack>
+            </Stack>
+
+        </Box >
     )
 }
 export default function Hero() {
@@ -94,48 +227,92 @@ export default function Hero() {
                                 transform: 'matrix(0.98, 0, -0.19, 1, 0, 0)',
                             }}
                         />
+                        <Box>
+                            <Card1 />
+                            <Card2 />
+                        </Box>
+
                         <Box
                             sx={[
                                 {
                                     position: 'absolute',
-                                    top: { xs: "5%", sm: '20%', lg: '5%' },
-                                    right: { xs: "5%", sm: '50%', lg: '5%' },
+                                    left: "-15%",
+                                    bottom: {
+                                        lg: '-95%',
+
+                                    },
+                                    //   top: { xs: "5%", sm: '20%', lg: '5%' },
+                                    //    right: { xs: "5%", sm: '50%', lg: '5%' },
                                     width: 'fit-content',
+                                    height: 'fit-content',
                                     p: 2,
-                                    background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
+                                    background: "linear-gradient(155.14deg, rgba(252, 255, 117, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)",
                                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
-                                    backdropFilter: 'blur(13.3817px)',
-                                    borderRadius: '21px',
-                                    transform: ' matrix(0.98, 0, -0.18, 1, 0, 0)',
+                                    backdropFilter: 'blur(24.6223px)',
+                                    borderRadius: '21.4107px',
+                                    transform: ' matrix(0.98, -0.01, -0.18, 1, 0, 0)',
                                     border: '1.6px solid rgba(255, 255, 255, 0.2)',
+
                                 }
                             ]}
                         >
                             <Stack
+                                direction="row"
                                 alignItems="center"
-                                justifyContent="center"
-                                sx={{
-                                    transform: 'matrix(0.98, 0, -0.18, 1, 0, 0)'
-                                }}
+                                spacing={2}
 
                             >
-                                <CTypography
-                                    fontFamily="ClashDisplay"
-                                    fontSize="25px"
-                                    fontWeight="700"
-                                    color={"#fff"}
-                                >
-                                    BID NOW!
-                                </CTypography>
-                                <CTypography
-                                    fontFamily="ClashDisplay"
-                                    fontSize="14px"
-                                    fontWeight="500"
-                                    color={"#000"}
 
+                                <Stack
+                                    // alignItems="center"
+                                    ///  justifyContent="center"
+                                    sx={{
+                                        transform: 'matrix(0.98, -0.01, -0.18, 1, 0, 0)'
+                                    }}
                                 >
-                                    Latest Collection
-                                </CTypography>
+                                    <CTypography
+                                        fontFamily="ClashDisplay"
+                                        fontSize="25px"
+                                        fontWeight="600"
+                                        color={"#fff"}
+                                    >5.758 ETH
+                                    </CTypography>
+                                    <CTypography
+                                        fontFamily="ClashDisplay"
+                                        fontSize="14px"
+                                        fontWeight="500"
+                                        color={"#000"}
+
+                                    >
+                                        Latest Bid
+                                    </CTypography>
+
+                                </Stack>
+                                <Stack
+                                    // alignItems="center"
+                                    ///  justifyContent="center"
+                                    sx={{
+                                        transform: 'matrix(0.98, -0.01, -0.18, 1, 0, 0)'
+                                    }}
+                                >
+                                    <CTypography
+                                        fontFamily="ClashDisplay"
+                                        fontSize="21px"
+                                        fontWeight="600"
+                                        color={"#fff"}
+                                    >$5758.31
+                                    </CTypography>
+                                    <CTypography
+                                        fontFamily="ClashDisplay"
+                                        fontSize="14px"
+                                        fontWeight="500"
+                                        color={"#24FF00"}
+
+                                    >
+                                        +12.45%
+                                    </CTypography>
+
+                                </Stack>
                             </Stack>
 
                         </Box >
