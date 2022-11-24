@@ -1,45 +1,46 @@
 /* eslint-disable react/prop-types */
 import { Box } from "@mui/material";
-import PropTypes from "prop-types";
 import * as React from "react";
-export default function ContainedButtons({
+export default function CButton({
 	children,
+	backgroundColor,
 	btnTitle,
 	...rest
 }) {
 	return (
 		<Box
 			sx={{
-				color: "#fff",
-				p: 1,
-				border: "1px solid #C778DD",
-				"&:hover": {
-					backgroundColor: "#C770DB1A",
-					opactiy: 0.8,
-					borderColor: "#C778DD",
-					cursor: "pointer",
+				// color: "#fff",
+				// padding: '10px 55px',
+				// border: "1px solid #fff",
+				// fontFamily: "Poppins",
+				// "&:hover": {
+				// 	backgroundColor: "#C770DB1A",
+				// 	opactiy: 0.8,
+				// 	borderColor: "#C778DD",
+				// 	cursor: "pointer",
+				// },
+				// fontWeight: "600",
+				alignItems: 'center',
+				color: '#fff',
+				backgroundColor: backgroundColor || '#2F80ED',
+				padding: '10px 55px',
+				borderRadius: '60px',
+				fontSize: '20px',
+				fontFamily: 'Poppins',
+				fontWeight: 400,
+				cursor: 'pointer',
+				...backgroundColor === 'transparent' && {
+					border: '1.5px solid #fff',
 				},
-				fontWeight: "600",
-			}}
+				"&:hover": {
+					backgroundColor: backgroundColor || '#2F80f1',
+				},
+			}
+			}
 			{...rest}
 		>
 			{btnTitle} {children}
 		</Box>
 	);
 }
-
-ContainedButtons.propTypes = {
-	children: PropTypes.node,
-	variant: PropTypes.string,
-	size: PropTypes.string,
-	color: PropTypes.string,
-	disabled: PropTypes.bool,
-	disableFocusRipple: PropTypes.bool,
-	disableRipple: PropTypes.bool,
-	endIcon: PropTypes.node,
-	fullWidth: PropTypes.bool,
-	href: PropTypes.string,
-	startIcon: PropTypes.node,
-	sx: PropTypes.object,
-	btnTitle: PropTypes.string,
-};

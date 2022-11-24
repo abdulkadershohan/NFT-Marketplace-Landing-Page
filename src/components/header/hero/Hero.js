@@ -4,6 +4,7 @@ import React from "react";
 import foxImg from "../../../assets/images/fox.png";
 import HeroImg from "../../../assets/images/heroImg3.png";
 import VerifiedIcon from "../../../assets/svg/VerifiedIcon";
+import CButton from "../../../utility/CButton";
 import CTypography from "../../../utility/CTypography";
 
 // BID NOW! section
@@ -426,24 +427,138 @@ export default function Hero() {
         >
             <Grid container spacing={2}
                 sx={{
-                    alignItems: 'center',
+                    // alignItems: 'center',
                     py: 8
                 }}
             >
+                {/* left section */}
                 <Grid item xs={12} md={6}>
-                    <Stack>
+                    <Stack
+                        spacing={2}
+                    >
                         <CTypography
                             fontSize="48px"
                             fontWeight="500"
                             fontFamily="ClashDisplay"
+                            text={`Discover`}
+                            textTransform="capitalize"
                         >
-                            Discover
-                            collect, & sell                Extraordinary
-                            NFTs
+                            <br />
+                            collect, & sell
+                            <span>
+                                <CTypography
+                                    fontSize="48px"
+                                    fontWeight="600"
+                                    fontFamily="ClashDisplay"
+                                    sx={{
+                                        background: "linear-gradient(#69EACB , #EACCF8 ,#6654F1)",
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+
+
+                                    }}
+                                >
+                                    Extraordinary
+                                </CTypography>
+                            </span>
+                            <span>
+                                NFTs
+                            </span>
                         </CTypography>
+                        <CTypography
+                            fontSize="18px"
+                            fontWeight="300"
+                            fontFamily="Poppins"
+                            textTransform="capitalize"
+                            lineHeight="30px"
+                        >
+                            the leading NFT Marketplace on Ethereum <br /> Home to the next generation of digital creators.<br />Discover the best NFT collections.
+                        </CTypography>
+                        <Stack
+                            direction="row"
+                            spacing={2}
+
+                        >
+                            <CButton
+                                btnTitle={"Explore"}
+                            />
+                            <CButton
+                                btnTitle={"Create"}
+                                backgroundColor='transparent'
+                            />
+                        </Stack>
+                        <Stack
+                            direction="row"
+                            sx={{
+                                transform: 'matrix(0.98, 0, -0.18, 1, 0, 0)'
+                            }}
+                            spacing={4}
+                            py={4}
+
+                        >
+                            <Box>
+                                <CTypography
+                                    fontFamily="ClashDisplay"
+                                    fontSize="34px"
+                                    fontWeight="600"
+                                    color={"#fff"}
+                                >
+                                    432K+
+                                </CTypography>
+                                <CTypography
+                                    fontFamily="ClashDisplay"
+                                    fontSize="15px"
+                                    fontWeight="300"
+                                    color={"#fff"}
+                                >
+                                    Collections
+                                </CTypography>
+                            </Box>
+
+                            <Box>
+                                <CTypography
+                                    fontFamily="ClashDisplay"
+                                    fontSize="34px"
+                                    fontWeight="600"
+                                    color={"#fff"}
+                                >
+                                    Artists
+                                </CTypography>
+                                <CTypography
+                                    fontFamily="ClashDisplay"
+                                    fontSize="15px"
+                                    fontWeight="300"
+                                    color={"#fff"}
+                                >
+                                    Artists
+                                </CTypography>
+                            </Box>
+
+                            <Box>
+                                <CTypography
+                                    fontFamily="ClashDisplay"
+                                    fontSize="34px"
+                                    fontWeight="600"
+                                    color={"#fff"}
+                                >
+                                    10K+
+                                </CTypography>
+                                <CTypography
+                                    fontFamily="ClashDisplay"
+                                    fontSize="15px"
+                                    fontWeight="300"
+                                    color={"#fff"}
+                                >
+                                    Community
+                                </CTypography>
+                            </Box>
+
+                        </Stack>
                     </Stack>
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Grid >
+                {/* right section */}
+
+                <Grid Grid item xs={12} md={6} >
                     <Box
                         sx={{
                             // backgroundColor: 'red',
@@ -540,8 +655,8 @@ export default function Hero() {
 
                     </Box>
 
-                </Grid>
-            </Grid>
-        </Stack>
+                </Grid >
+            </Grid >
+        </Stack >
     )
 }
