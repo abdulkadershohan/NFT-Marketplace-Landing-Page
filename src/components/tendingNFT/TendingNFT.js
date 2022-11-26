@@ -249,9 +249,10 @@ export default function TendingNFT() {
                 responsive={responsive}
                 infinite={true}
                 swipeable={true}
+                draggable={false}
                 centerMode={true}
-                keyBoardControl={true}
-                slidesToSlide={0.5}
+                keyBoardControl={false}
+
             //  partialVisible={true}
             >
 
@@ -260,6 +261,7 @@ export default function TendingNFT() {
                         <Card item={item} index={index} />
                     ))
                 }
+
             </Carousel>;
         </Stack>
     )
