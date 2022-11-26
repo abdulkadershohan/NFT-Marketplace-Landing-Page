@@ -73,20 +73,22 @@ const TendingNFTData = [
 ]
 
 const responsive = {
+    superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3 // optional, default to 1.
+        items: 3
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        slidesToSlide: 2 // optional, default to 1.
+        items: 2
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-        slidesToSlide: 1 // optional, default to 1.
+        breakpoint: { max: 964, min: 0 },
+        items: 1
     }
 };
 export default function TendingNFT() {
@@ -102,8 +104,6 @@ export default function TendingNFT() {
                     backdropFilter: 'blur(12.5px)',
                     border: "1.5px solid #69EACB ",
                     borderRadius: '20px',
-                    width: 400,
-
                 }}
             >
                 <Stack
@@ -118,7 +118,10 @@ export default function TendingNFT() {
                             background: 'rgba(255, 255, 255, 0.1)',
                             borderRadius: '15px',
                             flexGrow: 1,
-                            height: '300px',
+                            height: {
+                                lg: '300px',
+                                xs: '140px'
+                            },
                         }}
 
                     />
@@ -137,16 +140,28 @@ export default function TendingNFT() {
                                 sx={{
                                     background: '#D2E7FF',
                                     borderRadius: '10px',
-                                    width: 52,
-                                    height: 52,
+                                    width: {
+                                        lg: 52,
+                                        xs: 40
+                                    },
+                                    height: {
+                                        lg: 52,
+                                        xs: 40
+                                    },
                                 }}
                             />
 
                             <Stack>
                                 <CTypography
-                                    fontSize={22}
                                     fontWeight={500}
                                     fontFamily={'Poppins'}
+                                    sx={{
+                                        fontSize: {
+                                            lg: 22,
+                                            xs: 14
+                                        },
+
+                                    }}
                                 >
                                     {item.collectionName}
                                 </CTypography>
@@ -154,6 +169,13 @@ export default function TendingNFT() {
                                     fontSize={12}
                                     fontWeight={400}
                                     fontFamily={'Poppins'}
+                                    sx={{
+                                        fontSize: {
+                                            lg: 12,
+                                            xs: 10
+                                        },
+
+                                    }}
                                 >
                                     {item.userName}
                                 </CTypography>
@@ -166,8 +188,14 @@ export default function TendingNFT() {
                             sx={{
                                 background: 'rgba(255, 255, 255, 0.33)',
                                 borderRadius: '49px',
-                                height: 40,
-                                width: 40,
+                                height: {
+                                    lg: 40,
+                                    xs: 20
+                                },
+                                width: {
+                                    lg: 40,
+                                    xs: 20
+                                },
                             }}
                         />
                     </Stack>
@@ -181,6 +209,12 @@ export default function TendingNFT() {
                                 fontSize={20}
                                 fontWeight={500}
                                 fontFamily={'Poppins'}
+                                sx={{
+                                    fontSize: {
+                                        lg: 20,
+                                        xs: 12
+                                    },
+                                }}
                             >
                                 {item.lastBid} ETH
                             </CTypography>
@@ -188,6 +222,12 @@ export default function TendingNFT() {
                                 fontSize={12}
                                 fontWeight={400}
                                 fontFamily={'Poppins'}
+                                sx={{
+                                    fontSize: {
+                                        lg: 12,
+                                        xs: 10
+                                    },
+                                }}
                             >
                                 latest bid
                             </CTypography>
@@ -197,6 +237,12 @@ export default function TendingNFT() {
                                 fontSize={20}
                                 fontWeight={600}
                                 fontFamily={'Poppins'}
+                                sx={{
+                                    fontSize: {
+                                        lg: 20,
+                                        xs: 12
+                                    },
+                                }}
                             >
                                 {item.bidFrom} ETH
                             </CTypography>
@@ -204,6 +250,12 @@ export default function TendingNFT() {
                                 fontSize={12}
                                 fontWeight={400}
                                 fontFamily={'Poppins'}
+                                sx={{
+                                    fontSize: {
+                                        lg: 12,
+                                        xs: 10
+                                    },
+                                }}
                             >
                                 from
                             </CTypography>
@@ -213,6 +265,12 @@ export default function TendingNFT() {
                                 fontSize={20}
                                 fontWeight={500}
                                 fontFamily={'Poppins'}
+                                sx={{
+                                    fontSize: {
+                                        lg: 20,
+                                        xs: 12
+                                    },
+                                }}
                             >
                                 ${item.value}
                             </CTypography>
@@ -221,6 +279,12 @@ export default function TendingNFT() {
                                 fontWeight={400}
                                 fontFamily={'Poppins'}
                                 align={'right'}
+                                sx={{
+                                    fontSize: {
+                                        lg: 12,
+                                        xs: 10
+                                    },
+                                }}
                                 color={item.percent.includes('+') ? '#24FF00' : '#FF0000'}
                             >
                                 {item.percent}%
@@ -229,6 +293,22 @@ export default function TendingNFT() {
                     </Stack>
                     <CButton
                         align={'center'}
+                        sx={{
+                            background: '#2F80ED',
+                            borderRadius: '60px',
+                            padding: {
+                                lg: '15px 30px',
+                                xs: '5px 15px',
+                                color: '#fff',
+                                fontFamily: 'Poppins',
+                                fontWeight: 500,
+                                cursor: 'pointer',
+                                '&:hover': {
+                                    background: '#2F80ED',
+                                    opacity: 0.8,
+                                }
+                            },
+                        }}
                     >
                         Collect Now
                     </CButton>
@@ -254,7 +334,10 @@ export default function TendingNFT() {
 
                 {
                     TendingNFTData.map((item, index) => (
-                        <Card item={item} index={index} />
+                        <div key={index}
+                        >
+                            <Card item={item} index={index} />
+                        </div>
                     ))
                 }
 
