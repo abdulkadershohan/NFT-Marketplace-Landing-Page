@@ -45,6 +45,7 @@ export default function WalletSupport() {
         <Stack
             spacing={4}
             py={2}
+            pt={8}
         >
             <Stack
                 direction="row"
