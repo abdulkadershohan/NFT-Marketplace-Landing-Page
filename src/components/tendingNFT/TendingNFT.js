@@ -11,6 +11,7 @@ import Nft1 from "../../assets/images/nft1.png";
 import Nft2 from "../../assets/images/nft2.png";
 import Nft3 from "../../assets/images/nft3.png";
 import Nft4 from "../../assets/images/nft4.png";
+import CButton from "../../utility/CButton";
 import CTypography from "../../utility/CTypography";
 const TendingNFTData = [
     {
@@ -90,28 +91,19 @@ const responsive = {
 };
 export default function TendingNFT() {
 
-    const [activeStep, setActiveStep] = React.useState(1);
-
 
     const Card = ({ item, index }) => {
         return (
             <Stack
                 mx={2}
                 sx={{
-                    background: activeStep ? '' : 'inear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
+                    background: 'inear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
                     filter: 'drop-shadow(0px 4px 49px rgba(0, 7, 72, 0.12))',
                     backdropFilter: 'blur(12.5px)',
-                    // border: activeStep === index ? "5px solid linear-gradient(#69EACB , #EACCF8 ,#6654F1) " : '1.5px solid rgba(255, 255, 255, 0.3)',
-                    maxWidth: 400,
-                    borderWidth: activeStep === index ? '5px' : '1.5px',
-                    borderStyle: 'solid',
-                    borderImageSlice: 1,
-                    borderImageSource: 'linear-gradient(#69EACB , #EACCF8 ,#6654F1)',
+                    border: "1.5px solid #69EACB ",
                     borderRadius: '20px',
-                    // border: '1.5px solid transparent',
-                    // border: activeStep === index ? '5px solid linear-gradient(#69EACB , #EACCF8 ,#6654F1)' : 'rgba(255, 255, 255, 0.3)',
-                    //  borderColor: activeStep === index ? "rgba(105, 234, 203, 1),rgba(234, 204, 248, 1),rgba(102, 84, 241, 1)" : 'rgba(255, 255, 255, 0.3)',
-                    //rgba(105, 234, 203, 1),rgba(234, 204, 248, 1),rgba(102, 84, 241, 1)
+                    width: 400,
+
                 }}
             >
                 <Stack
@@ -235,6 +227,11 @@ export default function TendingNFT() {
                             </CTypography>
                         </Stack>
                     </Stack>
+                    <CButton
+                        align={'center'}
+                    >
+                        Collect Now
+                    </CButton>
                 </Stack>
 
             </Stack>
@@ -253,7 +250,6 @@ export default function TendingNFT() {
                 centerMode={true}
                 keyBoardControl={false}
 
-            //  partialVisible={true}
             >
 
                 {
@@ -263,6 +259,21 @@ export default function TendingNFT() {
                 }
 
             </Carousel>;
-        </Stack>
+            <Box
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    py: 2,
+                }}
+            >
+                <CButton
+                    align={'center'}
+                    backgroundColor={'transparent'}
+                >
+                    See More
+                </CButton>
+            </Box>
+        </Stack >
     )
 }
