@@ -16,7 +16,7 @@ const TendingNFTData = [
         lastBid: '15.8',
         bidFrom: '9.45',
         value: '$180,345',
-        percent: '+12.45%',
+        percent: '+12.45',
         avatar: avater1,
     }
 ]
@@ -115,7 +115,7 @@ export default function TendingNFT() {
                                 fontWeight={400}
                                 fontFamily={'Poppins'}
                             >
-                                latest bid 
+                                latest bid
                             </CTypography>
                         </Stack>
                         <Stack >
@@ -146,6 +146,7 @@ export default function TendingNFT() {
                                 fontSize={12}
                                 fontWeight={400}
                                 fontFamily={'Poppins'}
+                                align={'right'}
                                 color={item.percent.includes('+') ? '#24FF00' : '#FF0000'}
                             >
                                 {item.percent}%
