@@ -353,6 +353,8 @@ export default function TendingNFT() {
             <Carousel
                 responsive={responsive}
                 infinite={true}
+                autoPlay={true}
+                autoPlaySpeed={2000}
                 swipeable={true}
                 draggable={false}
                 centerMode={true}
