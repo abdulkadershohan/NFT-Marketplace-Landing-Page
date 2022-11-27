@@ -1,6 +1,7 @@
 import { Stack } from '@mui/system';
 import Header from './components/header/Header';
 import TendingNFT from './components/tendingNFT/TendingNFT';
+import TopCategories from './components/topCategories/TopCategories';
 import TopCollections from './components/topCollections/TopCollections';
 import WalletSupport from './components/walletSupport/WalletSupport';
 import './font.css';
@@ -17,6 +18,7 @@ function App() {
         <WalletSupport />
         <TendingNFT />
         <TopCollections />
+        <TopCategories />
       </Stack>
 
     </Stack >
