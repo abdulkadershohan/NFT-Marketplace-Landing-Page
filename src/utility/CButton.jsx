@@ -4,6 +4,10 @@ import * as React from "react";
 export default function CButton({
 	children,
 	backgroundColor,
+	fontSize,
+	borderRadius,
+	fontWeight,
+	padding,
 	btnTitle,
 	...rest
 }) {
@@ -24,11 +28,11 @@ export default function CButton({
 				alignItems: 'center',
 				color: '#fff',
 				backgroundColor: backgroundColor || '#2F80ED',
-				padding: '10px 55px',
-				borderRadius: '60px',
-				fontSize: '20px',
+				padding: padding || '10px 55px',
+				borderRadius: borderRadius || '60px',
+				fontSize: fontSize || '20px',
 				fontFamily: 'Poppins',
-				fontWeight: 400,
+				fontWeight: fontWeight || 400,
 				cursor: 'pointer',
 				...backgroundColor === 'transparent' && {
 					border: '1.5px solid #fff',
