@@ -242,7 +242,27 @@ const topCollectionsData = [
         percentage: '+67.9',
         type: 'art',
     },
+    {
+        id: 24,
+        profileImage: require('../../assets/images/profileImage6.png'),
+        name: 'CuteApe White  ',
+        username: 'CuteApe_99',
+        floorPrice: '0.045 ',
+        totalSales: '245.6',
+        percentage: '-14.5',
+        type: 'art',
 
+    },
+    {
+        id: 25,
+        profileImage: require('../../assets/images/profileImage7.png'),
+        name: 'SneakerHead Vol.1 ',
+        username: 'SneakerHead.Corp',
+        floorPrice: '1.4 ',
+        totalSales: '1790',
+        percentage: '+67.9',
+        type: 'art',
+    },
 ]
 export default function TopCollections() {
     const [active, setActive] = React.useState(1);
@@ -314,8 +334,6 @@ export default function TopCollections() {
             const music = topCollectionsData.filter(item => item.type === 'music')
             setRenderData(music.slice(0, 8))
         }
-
-
     }
     const Card = ({ item }) => {
         return (
@@ -414,24 +432,35 @@ export default function TopCollections() {
             </Stack>
         )
     }
-    return (
-        <Stack>
-            <CTypography
-                fontSize="48px"
-                fontWeight="600"
-                fontFamily="ClashDisplay"
-                sx={{
-                    background: "linear-gradient(#69EACB , #EACCF8 ,#6654F1)",
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    pb: 4,
-
-                }}
-                align={'center'}
+    const RenderCards = () => {
+        return (
+            <Stack
+                justifyContent={'center'}
+                alignItems={'center'}
+                py={6}
             >
-                Top Collections
-            </CTypography>
+                <Stack
+                    justifyContent={'center'}
+                    direction={'row'}
+                    flexWrap={'wrap'}
+                    gap={2}
 
+                >
+                    {
+                        renderData.map((item) => (
+                            <Card
+                                key={item.id}
+                                item={item}
+                            />
+                        ))
+                    }
+                </Stack>
+
+            </Stack>
+        )
+    }
+    const ButtonGroup = () => {
+        return (
             <Box
                 sx={{
                     display: 'flex',
@@ -461,29 +490,48 @@ export default function TopCollections() {
                 }
 
             </Box>
-            <Stack
-                justifyContent={'center'}
-                alignItems={'center'}
-                py={6}
+        )
+    }
+    const RenderTitle = () => {
+        return (
+            <CTypography
+                fontSize="48px"
+                fontWeight="600"
+                fontFamily="ClashDisplay"
+                sx={{
+                    background: "linear-gradient(#69EACB , #EACCF8 ,#6654F1)",
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    pb: 4,
+
+                }}
+                align={'center'}
             >
-                <Stack
-                    justifyContent={'center'}
-                    direction={'row'}
-                    flexWrap={'wrap'}
-                    gap={2}
-
+                Top Collections
+            </CTypography>
+        )
+    }
+    return (
+        <Stack>
+            <RenderTitle />
+            <ButtonGroup />
+            <RenderCards />
+            <Box
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    py: 2,
+                }}
+            >
+                <CButton
+                    align={'center'}
+                    backgroundColor={'transparent'}
+                    onClick={() => console.log('clicked')}
                 >
-                    {
-                        renderData.map((item) => (
-                            <Card
-                                key={item.id}
-                                item={item}
-                            />
-                        ))
-                    }
-                </Stack>
-
-            </Stack>
+                    See More
+                </CButton>
+            </Box>
         </Stack >
     );
 }
