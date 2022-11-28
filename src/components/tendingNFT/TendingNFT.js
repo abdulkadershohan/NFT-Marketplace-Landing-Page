@@ -371,7 +371,7 @@ export default function TendingNFT() {
                     ))
                 }
 
-            </Carousel>;
+            </Carousel>
             <Box
                 sx={{
                     display: 'flex',
