@@ -181,6 +181,13 @@ export default function Footer() {
                     direction={'row'}
                     justifyContent={'space-between'}
                     width="50%"
+                    sx={{
+                        gap: {
+                            xs: 2,
+                            sm: 4,
+                            md: 6,
+                        }
+                    }}
                 >
                     <Stack >
                         <CTypography

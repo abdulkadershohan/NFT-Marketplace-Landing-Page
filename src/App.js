@@ -15,7 +15,8 @@ function App() {
       <Header />
       <Stack
         sx={{
-          py: { xs: 50, md: 10 }
+          pt: { xs: 50, md: 10 },
+          pb: { xs: 4, }
         }}
       >
         <WalletSupport />
