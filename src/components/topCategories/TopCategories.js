@@ -1,6 +1,7 @@
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import Carousel from 'react-elastic-carousel';
+import CButton from "../../utility/CButton";
 import CTypography from "../../utility/CTypography";
 
 
@@ -206,17 +207,10 @@ export default function TopCategories() {
                     xs: 5,
                 }
             }}
+            spacing={5}
         >
             <RenderTitle />
-
-            {/* <Stack
-                //  direction={'row'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                gap={2}
-            > */}
-            <Stack
-            >
+            <Stack  >
                 <Carousel
                     itemsToShow={3}
                     pagination={false}
@@ -236,6 +230,22 @@ export default function TopCategories() {
                     }
                 </Carousel>
             </Stack>
+            <Box
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    py: 2,
+                }}
+            >
+                <CButton
+                    align={'center'}
+                    backgroundColor={'transparent'}
+                    onClick={() => console.log('clicked')}
+                >
+                    See More
+                </CButton>
+            </Box>
 
         </Stack >
     );
