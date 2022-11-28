@@ -363,7 +363,10 @@ export default function TopCollections() {
                             background: 'rgba(255, 255, 255, 0.1)',
                             borderRadius: '15px',
                             height: 'auto',
-                            width: '270px',
+                            width: {
+                                xs: '270px',
+                                lg: '290px'
+                            },
                         }}
 
                     />
@@ -476,6 +479,10 @@ export default function TopCollections() {
                     allButton.map((item) => (
                         <CButton
                             align={'center'}
+                            padding={{
+                                lg: '10px 62px',
+                                xs: '10px 55px'
+                            }}
                             {
                             ...item.id !== active && {
                                 backgroundColor: 'transparent',
