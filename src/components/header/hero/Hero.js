@@ -428,7 +428,11 @@ export default function Hero() {
             <Grid container spacing={2}
                 sx={{
                     //alignItems: 'center',
-                    py: 8
+                    py: {
+                        lg: 8,
+                        md: 8,
+                        xs: 0,
+                    }
                 }}
             >
                 {/* left section */}
