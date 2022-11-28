@@ -276,28 +276,33 @@ export default function Footer() {
     }
     return (
         <Stack
-            mx={10}
+            bgcolor={'#0E1135'}
+            py={10}
         >
-            <GetMoreUpdateSection />
-            <Divider
-                sx={{
-                    backgroundColor: '#fff',
-                    opacity: 0.4,
-                    my: 5,
-                    // mx: 10,
-                }}
-            />
-            <FooterSection />
-            <CTypography
-                fontSize="16px"
-                fontWeight="300"
-                fontFamily="Poppins"
-                color={"#fff"}
-                textAlign={'center'}
-                pt={5}
+            <Stack
+                mx={10}
             >
-                © {new Date().getFullYear()} Endft. All rights reserved.
-            </CTypography>
+                <GetMoreUpdateSection />
+                <Divider
+                    sx={{
+                        backgroundColor: '#fff',
+                        opacity: 0.4,
+                        my: 5,
+                        // mx: 10,
+                    }}
+                />
+                <FooterSection />
+                <CTypography
+                    fontSize="16px"
+                    fontWeight="300"
+                    fontFamily="Poppins"
+                    color={"#fff"}
+                    textAlign={'center'}
+                    pt={5}
+                >
+                    © {new Date().getFullYear()} Endft. All rights reserved.
+                </CTypography>
+            </Stack>
         </Stack>
     )
 }

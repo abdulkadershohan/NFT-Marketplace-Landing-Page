@@ -16,7 +16,6 @@ function App() {
       <Stack
         sx={{
           pt: { xs: 50, md: 10 },
-          pb: { xs: 4, }
         }}
       >
         <WalletSupport />

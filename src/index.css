@@ -6,8 +6,8 @@ body{
     background-image: url("../src/assets/images/BACKGROUND.png");
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center;
-    position: absolute; */
+     background-position: center; 
+    /* position: absolute; */ 
 
 }
 *{
