@@ -421,7 +421,7 @@ export default function Hero() {
     return (
         <Stack
             sx={{
-                px: { xs: 2, lg: 20 }
+                px: { xs: 2, lg: 10 }
             }}
             alignItems="center"
         >

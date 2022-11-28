@@ -7,6 +7,13 @@ import CButton from '../../../utility/CButton';
 import CTypography from "../../../utility/CTypography";
 
 const navItems = ['Marketplace', 'Collection', 'Community', "Create"];
+const navItems2 = [
+    {
+        id: 1,
+        title: 'Marketplace',
+        link: '/marketplace'
+    }
+];
 
 export default function Navbar() {
     const [open, setOpen] = React.useState(false);
@@ -17,12 +24,15 @@ export default function Navbar() {
                 sx={{
                     display: {
                         xs: 'none',
-                        lg: 'flex'
+                        md: 'flex'
                     },
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     py: 2,
-                    px: 20,
+                    px: {
+                        lg: 10,
+                        md: 2,
+                    },
 
                 }}
             >
@@ -32,6 +42,9 @@ export default function Navbar() {
                         alignItems: 'center',
                         display: 'flex',
                     }}
+                    component={'a'}
+                    href={'/'}
+
                 >
                     <Stack
                         component="img"
@@ -54,7 +67,10 @@ export default function Navbar() {
                 <Box
                     sx={{
                         display: 'flex',
-                        gap: '1rem',
+                        gap: {
+                            lg: '4rem',
+                            md: '1rem',
+                        },
                         alignItems: 'center',
                     }}
                 >
@@ -62,19 +78,26 @@ export default function Navbar() {
                         navItems.map((item, index) => (
                             <CTypography
                                 key={item}
-                                fontSize="20px"
-                                fontWeight="400"
+                                fontSize="18px"
+                                fontWeight="500"
                                 fontFamily="Poppins"
                                 sx={{
                                     cursor: 'pointer',
-                                }
-                                }
+                                    '&:hover': {
+                                        transform: 'scale(1.1)'
+                                    },
+                                }}
                             >
                                 {item}
                             </CTypography>
                         ))
                     }
-                    <CButton>
+                    <CButton
+                        padding='10px 30px'
+                        fontSize="18px"
+                        fontWeight="500"
+                        fontFamily="Poppins"
+                    >
                         Connect Wallet
                     </CButton>
                 </Box>
@@ -171,6 +194,7 @@ export default function Navbar() {
                                             backgroundColor: '#1A1D3D',
                                         },
                                     }}
+                                    onClick={() => setOpen(false)}
 
                                 >
                                     {item}
