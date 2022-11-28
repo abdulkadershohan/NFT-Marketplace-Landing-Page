@@ -130,7 +130,7 @@ export default function Articles() {
             sx={{
                 px: {
                     xs: 2,
-                    sm: 10
+                    lg: 10
                 },
                 py: {
                     lg: 20,

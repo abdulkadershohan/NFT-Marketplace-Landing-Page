@@ -50,7 +50,7 @@ export default function CreateAndSell() {
             sx={{
                 px: {
                     xs: 2,
-                    sm: 10
+                    lg: 10,
                 }
             }}
         >
