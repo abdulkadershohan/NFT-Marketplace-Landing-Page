@@ -40,6 +40,8 @@ export default function CButton({
 				"&:hover": {
 					backgroundColor: backgroundColor || '#2F80f1',
 					opactiy: 0.8,
+					transform: 'scale(1.05)',
+					transition: 'all 0.3s ease-in-out',
 					...backgroundColor === 'transparent' && {
 						border: '1.5px solid #2F80f1',
 					},
