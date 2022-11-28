@@ -1,6 +1,7 @@
 import { Stack } from '@mui/system';
 import Articles from './components/articles/Articles';
 import CreateAndSell from './components/createAndSell/CreateAndSell';
+import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import TendingNFT from './components/tendingNFT/TendingNFT';
 import TopCategories from './components/topCategories/TopCategories';
@@ -23,6 +24,7 @@ function App() {
         <TopCategories />
         <CreateAndSell />
         <Articles />
+        <Footer />
       </Stack>
 
     </Stack >
