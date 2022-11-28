@@ -45,46 +45,6 @@ export default function CreateAndSell() {
             </CTypography>
         )
     }
-    const Card = () => {
-        return (
-            <Stack
-                direction={'row'}
-            >
-                {
-                    createAndSellData.map((item) => (
-                        <Stack
-                            key={item.id}
-                            alignItems={'center'}
-                            px={4}
-                            spacing={3}
-                        >
-                            {item.icon}
-
-                            <CTypography
-                                fontSize="20px"
-                                fontWeight="600"
-                                fontFamily='Poppins'
-                            >
-                                {item.title}
-
-                            </CTypography>
-                            <CTypography
-                                fontSize="17px"
-                                fontWeight="200"
-                                fontFamily="Poppins"
-                                textAlign={'center'}
-                                px={3}
-                            >
-                                {item.description}
-                            </CTypography>
-
-                        </Stack>
-                    ))
-                }
-
-            </Stack>
-        )
-    }
     return (
         <Stack
             sx={{
