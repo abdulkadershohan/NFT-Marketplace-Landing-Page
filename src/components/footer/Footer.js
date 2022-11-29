@@ -110,7 +110,12 @@ export default function Footer() {
     const FooterSection = () => {
         return (
             <Stack>
-                <Grid container spacing={2}>
+                <Grid container
+                    spacing={{
+                        xs: 10,
+                        md: 2,
+                    }}
+                >
                     <Grid item xs={12} md={6}>
                         <Stack
                             spacing={3}
@@ -182,110 +187,125 @@ export default function Footer() {
                         </Stack>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} md={6}>
-                                <Stack
-                                    sx={{
-                                        alignItems: {
-                                            xs: 'center',
-                                            md: 'flex-start'
-                                        },
-                                    }}
-                                >
-                                    <CTypography
-                                        fontSize="32px"
-                                        fontWeight="600"
-                                        fontFamily="Poppins"
-                                    >
-                                        Marketplace
-                                    </CTypography>
-                                    <Stack
-                                        spacing={2}
-                                        py={5}
-                                        direction={{
-                                            xs: 'row',
-                                            md: 'column'
-                                        }}
-                                    >
-                                        {
-                                            marketplaceData.map((item) => (
-                                                <Box
-                                                    component={'a'}
-                                                    target={'_blank'}
-                                                    sx={{
-                                                        width: 'fit-content',
-                                                        '&:hover': {
-                                                            transform: 'scale(1.1)',
-                                                        }
-                                                    }}
-                                                    href={item.url}
-                                                    key={item.id}
-                                                >
-                                                    <CTypography
-                                                        fontSize="16px"
-                                                        fontWeight="300"
-                                                        fontFamily="Poppins"
-                                                        color={"#E0E0E0"}
-                                                    >
-                                                        {item.title}
-                                                    </CTypography>
-                                                </Box>
-                                            ))
-                                        }
-                                    </Stack>
-                                </Stack>
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <Stack
-                                    alignItems={{
+                        <Stack
+                            direction={{
+                                xs: 'column',
+                                md: 'row'
+                            }}
+                            justifyContent={'space-between'}
+                            px={{
+                                xs: 0,
+                                md: 5
+                            }}
+                            spacing={{
+                                xs: 5,
+                            }}
+                        >
+                            <Stack
+                                sx={{
+                                    alignItems: {
                                         xs: 'center',
                                         md: 'flex-start'
+                                    },
+                                }}
+                            >
+                                <CTypography
+                                    fontSize="32px"
+                                    fontWeight="600"
+                                    fontFamily="Poppins"
+                                >
+                                    Marketplace
+                                </CTypography>
+                                <Stack
+                                    spacing={2}
+                                    py={{
+                                        xs: 2,
+                                        md: 5
+                                    }}
+                                    direction={{
+                                        xs: 'row',
+                                        md: 'column'
                                     }}
                                 >
-                                    <CTypography
-                                        fontSize="32px"
-                                        fontWeight="600"
-                                        fontFamily="Poppins"
-                                    >
-                                        Links
-                                    </CTypography>
-                                    <Stack
-                                        spacing={2}
-                                        py={5}
-                                        direction={{
-                                            xs: 'row',
-                                            md: 'column'
-                                        }}
-                                    >
-                                        {
-                                            linkData.map((item) => (
-                                                <Box
-                                                    component={'a'}
-                                                    target={'_blank'}
-                                                    sx={{
-                                                        width: 'fit-content',
-                                                        '&:hover': {
-                                                            transform: 'scale(1.1)',
-                                                        }
-                                                    }}
-                                                    href={item.url}
-                                                    key={item.id}
+                                    {
+                                        marketplaceData.map((item) => (
+                                            <Box
+                                                component={'a'}
+                                                target={'_blank'}
+                                                sx={{
+                                                    width: 'fit-content',
+                                                    '&:hover': {
+                                                        transform: 'scale(1.1)',
+                                                    }
+                                                }}
+                                                href={item.url}
+                                                key={item.id}
+                                            >
+                                                <CTypography
+                                                    fontSize="16px"
+                                                    fontWeight="300"
+                                                    fontFamily="Poppins"
+                                                    color={"#E0E0E0"}
                                                 >
-                                                    <CTypography
-                                                        fontSize="16px"
-                                                        fontWeight="300"
-                                                        fontFamily="Poppins"
-                                                        color={"#E0E0E0"}
-                                                    >
-                                                        {item.title}
-                                                    </CTypography>
-                                                </Box>
-                                            ))
-                                        }
-                                    </Stack>
+                                                    {item.title}
+                                                </CTypography>
+                                            </Box>
+                                        ))
+                                    }
                                 </Stack>
-                            </Grid>
-                        </Grid>
+                            </Stack>
+                            <Stack
+                                alignItems={{
+                                    xs: 'center',
+                                    md: 'flex-start'
+                                }}
+                            >
+                                <CTypography
+                                    fontSize="32px"
+                                    fontWeight="600"
+                                    fontFamily="Poppins"
+                                >
+                                    Links
+                                </CTypography>
+                                <Stack
+                                    spacing={2}
+                                    py={{
+                                        xs: 2,
+                                        md: 5
+                                    }}
+                                    direction={{
+                                        xs: 'row',
+                                        md: 'column'
+                                    }}
+                                >
+                                    {
+                                        linkData.map((item) => (
+                                            <Box
+                                                component={'a'}
+                                                target={'_blank'}
+                                                sx={{
+                                                    width: 'fit-content',
+                                                    '&:hover': {
+                                                        transform: 'scale(1.1)',
+                                                    }
+                                                }}
+                                                href={item.url}
+                                                key={item.id}
+                                            >
+                                                <CTypography
+                                                    fontSize="16px"
+                                                    fontWeight="300"
+                                                    fontFamily="Poppins"
+                                                    color={"#E0E0E0"}
+                                                >
+                                                    {item.title}
+                                                </CTypography>
+                                            </Box>
+                                        ))
+                                    }
+                                </Stack>
+                            </Stack>
+                        </Stack>
                     </Grid>
                 </Grid>
             </Stack>
