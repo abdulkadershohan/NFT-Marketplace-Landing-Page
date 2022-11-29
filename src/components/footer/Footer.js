@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 import logo from '../../assets/images/logo.png';
@@ -109,169 +109,186 @@ export default function Footer() {
     ]
     const FooterSection = () => {
         return (
-            <Stack
-                sx={{
-                    flexDirection: { xs: 'column', md: 'row' },
-                }}
-                justifyContent={'space-between'}
-            >
-                <Stack>
-                    <Stack direction={'row'}
-                        spacing={2}
-                        component={'a'}
-                        href={'#'}
-                        width={'fit-content'}
-
-                    >
-                        <Box
-                            component="img"
-                            src={logo}
-                            alt="logo"
-                            sx={{ width: '3rem', height: '3rem' }}
-                        />
-                        <Typography
+            <Stack>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <Stack
+                            spacing={3}
                             sx={{
-                                fontSize: '36px',
-                                fontWeight: 600,
-                                color: '#fff',
-                                fontFamily: 'Poppins',
+                                alignItems: {
+                                    xs: 'center',
+                                    md: 'flex-start'
+                                },
                             }}
                         >
-                            ENDFT
-                        </Typography>
-                    </Stack>
-                    <Stack
-                        maxWidth={'400px'}
-                        py={5}
-                    >
-                        <Typography
-                            fontSize="16px"
-                            fontWeight="300"
-                            fontFamily="Poppins"
-                            color={"#E0E0E0"}
-                            textTransform={'capitalize'}
-                        >
-                            the leading NFT Marketplace on Ethereum Home to the next generation of digital creators. Discover the best NFT collections.
-                        </Typography>
-                    </Stack>
-                    <Stack
-                        direction={'row'}
-                        spacing={3}
-                    >
-                        {
-                            socailIcon.map((item) => (
+                            <Stack direction={'row'}
+                                spacing={2}
+                                component={'a'}
+                                href={'#'}
+                                width={'fit-content'}
+
+                            >
                                 <Box
-                                    key={item.id}
+                                    component="img"
+                                    src={logo}
+                                    alt="logo"
+                                    sx={{ width: '3rem', height: '3rem' }}
+                                />
+                                <Typography
                                     sx={{
-                                        '&:hover': {
-                                            cursor: 'pointer',
-                                            transform: 'scale(1.1)',
-                                        }
+                                        fontSize: '36px',
+                                        fontWeight: 600,
+                                        color: '#fff',
+                                        fontFamily: 'Poppins',
                                     }}
                                 >
-                                    {item.icon}
-                                </Box>
-                            ))
-                        }
-                    </Stack>
-
-                </Stack>
-                {/* link & marketplace */}
-                <Stack
-                    direction={'row'}
-                    justifyContent={'space-between'}
-                    width="50%"
-                    sx={{
-                        gap: {
-                            xs: 2,
-                            sm: 4,
-                            md: 6,
-                        }
-                    }}
-                >
-                    <Stack >
-                        <CTypography
-                            fontSize="32px"
-                            fontWeight="600"
-                            fontFamily="Poppins"
-                        >
-                            Marketplace
-                        </CTypography>
-                        <Stack
-                            spacing={2}
-                            py={5}
-                        >
-                            {
-                                marketplaceData.map((item) => (
-                                    <Box
-                                        component={'a'}
-                                        target={'_blank'}
-                                        sx={{
-                                            width: 'fit-content',
-                                            '&:hover': {
-                                                transform: 'scale(1.1)',
-                                            }
-                                        }}
-                                        href={item.url}
-                                        key={item.id}
-                                    >
-                                        <CTypography
-                                            fontSize="16px"
-                                            fontWeight="300"
-                                            fontFamily="Poppins"
-                                            color={"#E0E0E0"}
+                                    ENDFT
+                                </Typography>
+                            </Stack>
+                            <Stack
+                                maxWidth={'400px'}
+                            >
+                                <Typography
+                                    fontSize="16px"
+                                    fontWeight="300"
+                                    fontFamily="Poppins"
+                                    color={"#E0E0E0"}
+                                    textTransform={'capitalize'}
+                                    lineHeight={'41px'}
+                                >
+                                    the leading NFT Marketplace on Ethereum Home to the next generation of digital creators. Discover the best NFT collections.
+                                </Typography>
+                            </Stack>
+                            <Stack
+                                direction={'row'}
+                                spacing={3}
+                            >
+                                {
+                                    socailIcon.map((item) => (
+                                        <Box
+                                            key={item.id}
+                                            sx={{
+                                                '&:hover': {
+                                                    cursor: 'pointer',
+                                                    transform: 'scale(1.1)',
+                                                }
+                                            }}
                                         >
-                                            {item.title}
-                                        </CTypography>
-                                    </Box>
-                                ))
-                            }
+                                            {item.icon}
+                                        </Box>
+                                    ))
+                                }
+                            </Stack>
                         </Stack>
-                    </Stack>
-                    <Stack>
-                        <CTypography
-                            fontSize="32px"
-                            fontWeight="600"
-                            fontFamily="Poppins"
-                        >
-                            Links
-                        </CTypography>
-                        <Stack
-                            spacing={2}
-                            py={5}
-
-                        >
-                            {
-                                linkData.map((item) => (
-                                    <Box
-                                        component={'a'}
-                                        target={'_blank'}
-                                        sx={{
-                                            width: 'fit-content',
-                                            '&:hover': {
-                                                transform: 'scale(1.1)',
-                                            }
-                                        }}
-                                        href={item.url}
-                                        key={item.id}
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={6}>
+                                <Stack
+                                    sx={{
+                                        alignItems: {
+                                            xs: 'center',
+                                            md: 'flex-start'
+                                        },
+                                    }}
+                                >
+                                    <CTypography
+                                        fontSize="32px"
+                                        fontWeight="600"
+                                        fontFamily="Poppins"
                                     >
-                                        <CTypography
-                                            fontSize="16px"
-                                            fontWeight="300"
-                                            fontFamily="Poppins"
-                                            color={"#E0E0E0"}
-                                        >
-                                            {item.title}
-                                        </CTypography>
-                                    </Box>
-                                ))
-                            }
-                        </Stack>
-                    </Stack>
-
-                </Stack>
-
-            </Stack >
+                                        Marketplace
+                                    </CTypography>
+                                    <Stack
+                                        spacing={2}
+                                        py={5}
+                                        direction={{
+                                            xs: 'row',
+                                            md: 'column'
+                                        }}
+                                    >
+                                        {
+                                            marketplaceData.map((item) => (
+                                                <Box
+                                                    component={'a'}
+                                                    target={'_blank'}
+                                                    sx={{
+                                                        width: 'fit-content',
+                                                        '&:hover': {
+                                                            transform: 'scale(1.1)',
+                                                        }
+                                                    }}
+                                                    href={item.url}
+                                                    key={item.id}
+                                                >
+                                                    <CTypography
+                                                        fontSize="16px"
+                                                        fontWeight="300"
+                                                        fontFamily="Poppins"
+                                                        color={"#E0E0E0"}
+                                                    >
+                                                        {item.title}
+                                                    </CTypography>
+                                                </Box>
+                                            ))
+                                        }
+                                    </Stack>
+                                </Stack>
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <Stack
+                                    alignItems={{
+                                        xs: 'center',
+                                        md: 'flex-start'
+                                    }}
+                                >
+                                    <CTypography
+                                        fontSize="32px"
+                                        fontWeight="600"
+                                        fontFamily="Poppins"
+                                    >
+                                        Links
+                                    </CTypography>
+                                    <Stack
+                                        spacing={2}
+                                        py={5}
+                                        direction={{
+                                            xs: 'row',
+                                            md: 'column'
+                                        }}
+                                    >
+                                        {
+                                            linkData.map((item) => (
+                                                <Box
+                                                    component={'a'}
+                                                    target={'_blank'}
+                                                    sx={{
+                                                        width: 'fit-content',
+                                                        '&:hover': {
+                                                            transform: 'scale(1.1)',
+                                                        }
+                                                    }}
+                                                    href={item.url}
+                                                    key={item.id}
+                                                >
+                                                    <CTypography
+                                                        fontSize="16px"
+                                                        fontWeight="300"
+                                                        fontFamily="Poppins"
+                                                        color={"#E0E0E0"}
+                                                    >
+                                                        {item.title}
+                                                    </CTypography>
+                                                </Box>
+                                            ))
+                                        }
+                                    </Stack>
+                                </Stack>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Stack>
         )
     }
     return (
