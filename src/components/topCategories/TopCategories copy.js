@@ -1,18 +1,13 @@
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import Carousel from 'react-elastic-carousel';
+import CButton from "../../utility/CButton";
 import CTypography from "../../utility/CTypography";
-// import Swiper JS
-// import Swiper styles
-import 'swiper/css';
-// eslint-disable-next-line
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide ,useSwiper } from 'swiper/react';
+  // import Swiper JS
+  import Swiper from 'swiper';
+  // import Swiper styles
+  import 'swiper/css';
 
-
-// import required modules
-import { Navigation, Pagination } from "swiper";
 
 const topCategoriesData = [
     {
@@ -48,10 +43,42 @@ const topCategoriesData = [
         }
 
     },
+    {
+        id: 4,
+        type: 'Art',
+        images: {
+            id: 4,
+            image1: require('../../assets/images/art1.png'),
+            image2: require('../../assets/images/art2.png'),
+            image3: require('../../assets/images/art3.png'),
+        }
+
+    },
+    {
+        id: 5,
+        type: 'Collectibles',
+        images: {
+            id: 5,
+            image1: require('../../assets/images/collectibles1.png'),
+            image2: require('../../assets/images/collectibles2.png'),
+            image3: require('../../assets/images/collectibles3.png'),
+        }
+
+    },
+    {
+        id: 6,
+        type: 'Virtual Worlds & Metaverse',
+        images: {
+            id: 6,
+            image1: require('../../assets/images/virtualWorldMetaverse1.png'),
+            image2: require('../../assets/images/virtualWorldMetaverse2.png'),
+            image3: require('../../assets/images/virtualWorldMetaverse3.png'),
+        }
+
+    }
 
 ]
 export default function TopCategories() {
-    const swiper = useSwiper();
 
     const RenderTitle = () => {
         return (
@@ -175,9 +202,6 @@ export default function TopCategories() {
             width: 1200,
             itemsToShow: 3,
         }]
-    const navigationPrevRef = React.useRef(null)
-    const navigationNextRef = React.useRef(null)
-
     return (
         <Stack
             sx={{
@@ -190,63 +214,42 @@ export default function TopCategories() {
             spacing={5}
         >
             <RenderTitle />
-            <Stack
+            <Stack  >
+                <Carousel
+                    itemsToShow={3}
+                    pagination={false}
+                    breakPoints={breakPoints}
+
+                >
+                    {
+                        topCategoriesData.map((item) => (
+                            <div
+                                key={Math.random()}
+                            >
+                                <MainCard
+                                    item={item}
+                                />
+                            </div>
+                        ))
+                    }
+                </Carousel>
+            </Stack>
+            <Box
                 sx={{
-                    //  px: 10
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    py: 2,
                 }}
             >
-                <div>
-                    <Swiper
-                        slidesPerView={3}
-                        spaceBetween={30}
-                        slidesPerGroup={1}
-                        loop={true}
-                        loopFillGroupWithBlank={true}
-                        // pagination={{
-                        //     clickable: true,
-                        // }}
-                        navigation={{
-                            nextEl: '.review-swiper-button-next',
-                            prevEl: '.review-swiper-button-prev',
-                        }}
-                        // navigation={{
-                        //     // Both prevEl & nextEl are null at render so this does not work
-                        //     prevEl: navigationPrevRef.current,
-                        //     nextEl: navigationNextRef.current,
-                        // }}
-                        // onSwiper={(swiper) => {
-                        //     // Delay execution for the refs to be defined
-                        //     setTimeout(() => {
-                        //         // Override prevEl & nextEl now that refs are defined
-                        //         swiper.params.navigation.prevEl = navigationPrevRef.current
-                        //         swiper.params.navigation.nextEl = navigationNextRef.current
-
-                        //         // Re-init navigation
-                        //         swiper.navigation.destroy()
-                        //         swiper.navigation.init()
-                        //         swiper.navigation.update()
-                        //     })
-                        // }}
-                        modules={[Pagination, Navigation]}
-                        className="mySwiper"
-                    >
-                        {
-                            topCategoriesData.map((item) => (
-                                <SwiperSlide
-                                    key={Math.random()}
-                                >
-                                    <MainCard
-                                        item={item}
-                                    />
-                                </SwiperSlide>
-                            ))
-                        }
-                        <div ref={navigationPrevRef} />
-                        <div ref={navigationNextRef} />
-                    </Swiper>
-                </div>
-
-            </Stack>
+                <CButton
+                    align={'center'}
+                    backgroundColor={'transparent'}
+                    onClick={() => console.log('clicked')}
+                >
+                    See More
+                </CButton>
+            </Box>
 
         </Stack >
     );
