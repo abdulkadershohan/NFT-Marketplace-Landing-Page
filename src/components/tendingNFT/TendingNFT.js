@@ -333,6 +333,7 @@ export default function TendingNFT() {
                     xs: 5,
                 }
             }}
+            spacing={5}
         >
             <CTypography
                 fontSize="48px"

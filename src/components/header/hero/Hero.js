@@ -580,14 +580,17 @@ export default function Hero() {
                 </Grid >
                 {/* right section */}
 
-                <Grid Grid item xs={12} md={6}
-
-                >
+                <Grid Grid item xs={12} md={6} >
                     <Box
                         sx={{
                             // backgroundColor: 'red',
                             position: 'relative',
-                            ml: { xs: 5, sm: 10, md: 0 },
+                            ml: {
+                                xs: 6,
+                                sm: 10,
+                                md: 0
+                            },
+                            // height: 600
 
                         }}
                         component="div"

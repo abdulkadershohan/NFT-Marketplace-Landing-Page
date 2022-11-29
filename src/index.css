@@ -21,3 +21,12 @@ ul{
 a{
     text-decoration: none;
 }
+/* scroll bar desigin */
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #0E1135;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 10px;
+}
