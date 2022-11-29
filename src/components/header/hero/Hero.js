@@ -15,7 +15,10 @@ const Card1 = () => {
                 {
                     position: 'absolute',
                     top: "-2%",
-                    right: "-10%",
+                    right: {
+                        xs: "-15%",
+                        sm: "-20%",
+                    },
                     // top: { xs: "5%", sm: '20%', lg: '5%' },
                     // right: { xs: "5%", sm: '50%', lg: '5%' },
                     width: 'fit-content',
@@ -67,8 +70,14 @@ const Card2 = () => {
             sx={[
                 {
                     position: 'absolute',
-                    right: '-20%',
-                    top: "65%",
+                    right: {
+                        xs: '-15%',
+                        md: '-25%',
+                    },
+                    top: {
+                        xs: "55%",
+                        sm: "60%",
+                    },
                     // bottom: {
                     //     lg: '-50%',
 
@@ -78,7 +87,7 @@ const Card2 = () => {
                     width: 'fit-content',
                     height: 'fit-content',
                     p: 2,
-                    px: 4,
+                    // px: 4,
                     background: "linear-gradient(155.14deg, rgba(252, 255, 117, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)",
                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
                     backdropFilter: 'blur(24.6223px)',
@@ -158,7 +167,10 @@ const Card3 = () => {
                 {
                     position: 'absolute',
                     bottom: '-7%',
-                    left: '-15%',
+                    left: {
+                        xs: "-20%",
+                        sm: "-15%",
+                    },
                     width: 'fit-content',
                     height: 'fit-content',
                     p: 2,
@@ -295,11 +307,17 @@ const Card5 = () => {
                 {
                     position: 'absolute',
                     bottom: {
-                        sm: '-10%',
                         xs: '-30%',
+                        sm: '-10%',
+
 
                     },
-                    right: '5%',
+                    right: {
+                        xs: '5%',
+                        sm: '-10%',
+                        md: '-35%',
+                        lg: '-5%',
+                    },
                     // top: { xs: "5%", sm: '20%', lg: '5%' },
                     // right: { xs: "5%", sm: '50%', lg: '5%' },
                     width: 'fit-content',
@@ -421,14 +439,18 @@ export default function Hero() {
     return (
         <Stack
             sx={{
-                px: { xs: 2, lg: 20 }
+                px: { xs: 2, lg: 10 }
             }}
             alignItems="center"
         >
             <Grid container spacing={2}
                 sx={{
                     //alignItems: 'center',
-                    py: 8
+                    py: {
+                        lg: 8,
+                        md: 8,
+                        xs: 0,
+                    }
                 }}
             >
                 {/* left section */}
@@ -558,14 +580,17 @@ export default function Hero() {
                 </Grid >
                 {/* right section */}
 
-                <Grid Grid item xs={12} md={6}
-
-                >
+                <Grid Grid item xs={12} md={6} >
                     <Box
                         sx={{
                             // backgroundColor: 'red',
                             position: 'relative',
-                            ml: { xs: 4, sm: 0 },
+                            ml: {
+                                xs: 6,
+                                sm: 10,
+                                md: 0
+                            },
+                            // height: 600
 
                         }}
                         component="div"
@@ -574,7 +599,12 @@ export default function Hero() {
                             sx={[
                                 {
                                     display: 'flex',
-                                    width: { xs: 300, sm: 440, md: 350, lg: 440 },
+                                    width: {
+                                        xs: 250,
+                                        sm: 300,
+                                        md: 250,
+                                        lg: 440
+                                    },
                                     height: { xs: 300 },
                                     background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
                                     filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
@@ -604,8 +634,17 @@ export default function Hero() {
                                             // top: "25%",
                                             // left: "5%",
                                             display: 'flex',
-                                            width: { xs: 350, sm: 520, md: 400, lg: 520 },
-                                            height: { xs: 520, sm: 600, lg: 600 },
+                                            width: {
+                                                xs: 320,
+                                                sm: 400,
+                                                md: 320,
+                                                lg: 500
+                                            },
+                                            height: {
+                                                xs: 500,
+                                                sm: 550,
+                                                lg: 600
+                                            },
                                             background: 'linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%)',
                                             filter: 'drop-shadow(0px 4.28214px 52.4562px rgba(0, 7, 72, 0.12))',
                                             backdropFilter: 'blur(13.3817px)',
@@ -625,7 +664,10 @@ export default function Hero() {
                             sx={{
                                 position: 'absolute',
                                 top: 20,
-                                left: 0,
+                                left: {
+                                    xs: 15,
+                                    sm: 5,
+                                },
                             }}
                         >
                             <Box
@@ -638,8 +680,17 @@ export default function Hero() {
                                     src={HeroImg}
                                     alt="heroImg"
                                     sx={{
-                                        height: { xs: 420, sm: 520, lg: 520 },
-                                        width: { xs: 350, sm: 520, md: 400, lg: 520 },
+                                        height: {
+                                            xs: 400,
+                                            sm: 450,
+                                            lg: 520
+                                        },
+                                        width: {
+                                            xs: 300,
+                                            sm: 400,
+                                            md: 300,
+                                            lg: 520
+                                        },
 
                                         filter: 'drop-shadow(16.058px 17.1286px 35.3276px rgba(0, 0, 0, 0.09))',
                                         borderRadius: '16px',

@@ -1,27 +1,10 @@
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import Carousel from 'react-elastic-carousel';
+import CButton from "../../utility/CButton";
 import CTypography from "../../utility/CTypography";
 
 
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-    },
-    mobile: {
-        breakpoint: { max: 964, min: 0 },
-        items: 1
-    }
-};
 const topCategoriesData = [
     {
         id: 1,
@@ -50,6 +33,39 @@ const topCategoriesData = [
         type: 'Virtual Worlds & Metaverse',
         images: {
             id: 3,
+            image1: require('../../assets/images/virtualWorldMetaverse1.png'),
+            image2: require('../../assets/images/virtualWorldMetaverse2.png'),
+            image3: require('../../assets/images/virtualWorldMetaverse3.png'),
+        }
+
+    },
+    {
+        id: 4,
+        type: 'Art',
+        images: {
+            id: 4,
+            image1: require('../../assets/images/art1.png'),
+            image2: require('../../assets/images/art2.png'),
+            image3: require('../../assets/images/art3.png'),
+        }
+
+    },
+    {
+        id: 5,
+        type: 'Collectibles',
+        images: {
+            id: 5,
+            image1: require('../../assets/images/collectibles1.png'),
+            image2: require('../../assets/images/collectibles2.png'),
+            image3: require('../../assets/images/collectibles3.png'),
+        }
+
+    },
+    {
+        id: 6,
+        type: 'Virtual Worlds & Metaverse',
+        images: {
+            id: 6,
             image1: require('../../assets/images/virtualWorldMetaverse1.png'),
             image2: require('../../assets/images/virtualWorldMetaverse2.png'),
             image3: require('../../assets/images/virtualWorldMetaverse3.png'),
@@ -92,63 +108,12 @@ export default function TopCategories() {
 
                 }}
             >
-                {/* <Grid container
-                    m={1}
-                >
-                    <Grid item xs={6}>
-                        <Stack
-                            spacing={1}
-                        >
-                            <Box
-                                component={'img'}
-                                src={images.image1}
-                                alt={item.name}
-                                sx={{
-                                    background: 'rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '15px',
-                                    height: 150,
-                                    width: 150,
-                                }}
-
-                            />
-                            <Box
-                                component={'img'}
-                                src={images.image2}
-                                alt={item.name}
-                                sx={{
-                                    background: 'rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '15px',
-                                    height: 150,
-                                    width: 150,
-                                }}
-
-                            />
-                        </Stack>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Box
-                            component={'img'}
-                            src={images.image3}
-                            alt={item.name}
-                            sx={{
-                                background: 'rgba(255, 255, 255, 0.1)',
-                                borderRadius: '15px',
-                                // height: 150,
-                                flexGrow: 1,
-                            }}
-
-                        />
-                    </Grid>
-                </Grid> */}
                 <Stack
                     direction={'row'}
-                    // justifyContent={'space-between'}
                     spacing={1}
                     m={2}
-
                 >
                     <Stack
-
                         spacing={1}
                     >
                         <Box
@@ -157,8 +122,14 @@ export default function TopCategories() {
                             alt={item.name}
                             sx={{
                                 borderRadius: '9.97769px',
-                                height: 150,
-                                width: 150,
+                                height: {
+                                    xs: 120,
+                                    sm: 150
+                                },
+                                width: {
+                                    xs: 120,
+                                    sm: 150
+                                },
                             }}
 
                         />
@@ -168,8 +139,14 @@ export default function TopCategories() {
                             alt={item.name}
                             sx={{
                                 borderRadius: '9.97769px',
-                                height: 150,
-                                width: 150,
+                                height: {
+                                    xs: 120,
+                                    sm: 150
+                                },
+                                width: {
+                                    xs: 120,
+                                    sm: 150
+                                },
                             }}
 
                         />
@@ -183,6 +160,10 @@ export default function TopCategories() {
                             sx={{
                                 borderRadius: '15px',
                                 flexGrow: 1,
+                                width: {
+                                    xs: 200,
+                                    sm: 250
+                                },
                             }}
 
                         />
@@ -203,6 +184,20 @@ export default function TopCategories() {
             </Stack>
         )
     }
+    const breakPoints = [
+        {
+            width: 600,
+            itemsToShow: 1,
+
+        },
+        {
+            width: 900,
+            itemsToShow: 2,
+        },
+        {
+            width: 1200,
+            itemsToShow: 3,
+        }]
     return (
         <Stack
             sx={{
@@ -212,24 +207,46 @@ export default function TopCategories() {
                     xs: 5,
                 }
             }}
+            spacing={5}
         >
             <RenderTitle />
+            <Stack  >
+                <Carousel
+                    itemsToShow={3}
+                    pagination={false}
+                    breakPoints={breakPoints}
 
-            <Stack
-                direction={'row'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                gap={2}
-            >
-                {
-                    topCategoriesData.map((item) => (
-                        <MainCard
-                            item={item}
-                        />
-                    ))
-                }
-
+                >
+                    {
+                        topCategoriesData.map((item) => (
+                            <div
+                                key={Math.random()}
+                            >
+                                <MainCard
+                                    item={item}
+                                />
+                            </div>
+                        ))
+                    }
+                </Carousel>
             </Stack>
-        </Stack>
+            <Box
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    py: 2,
+                }}
+            >
+                <CButton
+                    align={'center'}
+                    backgroundColor={'transparent'}
+                    onClick={() => console.log('clicked')}
+                >
+                    See More
+                </CButton>
+            </Box>
+
+        </Stack >
     );
 }
