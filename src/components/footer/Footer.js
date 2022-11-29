@@ -280,7 +280,13 @@ export default function Footer() {
             py={10}
         >
             <Stack
-                mx={10}
+                sx={{
+                    px: {
+                        xs: 2,
+                        sm: 10,
+
+                    }
+                }}
             >
                 <GetMoreUpdateSection />
                 <Divider
@@ -303,6 +309,6 @@ export default function Footer() {
                     © {new Date().getFullYear()} Endft. All rights reserved.
                 </CTypography>
             </Stack>
-        </Stack>
+        </Stack >
     )
 }
